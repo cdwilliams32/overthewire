@@ -1,0 +1,51 @@
+# Level 0 -> Level 1
+cat readme
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+# Level 1 -> Level 2
+cat ~/-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+# Level 2 -> Level 3
+cat spaces\ in\ this\ filename 
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+# Level 3 -> Level 4
+cd inhere
+cat .hidden
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+# Level 4 -> Level 5
+file ~/inhere/*
+cat inhere/-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+# Level 5 -> Level 6
+find ./ -type f -readable ! -executable -size 1033c
+cat ./inhere/maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+# Level 6 -> Level 7
+find / -type f -user bandit7 -group bandit6 -size 33c
+cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+# Level 7 -> Level 8
+cat data.txt | grep millionth
+millionth	cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+# Level 8 -> Level 9
+cat data.txt | sort | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+# Level 9 -> Level 10
+strings data.txt | grep -E "+="
+&========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+
+# Level 10 -> Level 11
+# Level 11 -> Level 12
+# Level 12 -> Level 13
+# Level 13 -> Level 14
+# Level 14 -> Level 15
+# Level 15 -> Level 16
+# Level 16 -> Level 17
